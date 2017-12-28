@@ -2,15 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-
 import { BrowserRouter, Route } from 'react-router-dom';
-// BrowserRouter interacts with History library
-// Route can be rendered inside any component
+import Promise from 'redux-proimse';
 
 import reducers from './reducers';
 import PostsIndex from './components/posts_index';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 
 ReactDOM.render(
