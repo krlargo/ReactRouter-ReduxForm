@@ -26,8 +26,8 @@ class PostsNew extends Component {
           />
 
           <Field
-            labelText="Tags"
-            name="tags"
+            labelText="Categories"
+            name="categories"
             component={this.renderField}
           />
 
