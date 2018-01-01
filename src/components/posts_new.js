@@ -11,6 +11,7 @@ class PostsNew extends Component {
           type="text"
           {...field.input}
         />
+        {field.meta.error}
       </div>
     )
   }
@@ -45,6 +46,7 @@ class PostsNew extends Component {
 function validate(values) {
   const errors = {};
 
+  // errors.NAME; NAME must be equivalent to a <Field> name
   if(!values.title) {
     errors.title = "Please enter a title."
   }
