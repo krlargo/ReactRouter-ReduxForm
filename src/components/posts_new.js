@@ -16,10 +16,18 @@ class PostsNew extends Component {
     )
   }
 
+  // Gets called AFTER validation
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+
+    // .bind(this) so that callback is executed within our component's context
     return (
       <div>
-        <form>
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             labelText="Title"
             name="title"
@@ -37,6 +45,11 @@ class PostsNew extends Component {
             name="content"
             component={this.renderField}
           />
+
+          <button type="submit" className="btn btn-primary">
+            submit
+          </button>
+
         </form>
       </div>
     )
