@@ -20,11 +20,10 @@ class PostsShow extends Component {
 
     return (
       <div>
-        <Link
-          className="btn btn-primary"
-          to="/">
+        <Link to="/">
           Back to Posts
         </Link>
+
         <h3>{title}</h3>
         <h6>Categories: {categories}</h6>
         <p>{content}</p>
