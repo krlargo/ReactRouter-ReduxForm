@@ -8,10 +8,14 @@ class PostsShow extends Component {
     // Provided by ReactRouter
     // 'params' gives us wild card values in our URL; extract 'id' specifically
     const { id } = this.props.match.params;
-    this.props.fetchPost();
+    this.props.fetchPost(id);
   }
 
   render() {
+    if(!this.props.post) {
+      return <div>Loading...</div>;
+    }
+
     const { title, categories, content } = this.props.post;
 
     return (
@@ -21,9 +25,9 @@ class PostsShow extends Component {
           to="/">
           Back to Posts
         </Link>
-        <div>{title}</div>
-        <div>{categories}</div>
-        <div>{content}</div>
+        <h3>{title}</h3>
+        <h6>Categories: {categories}</h6>
+        <p>{content}</p>
       </div>
     )
   }
